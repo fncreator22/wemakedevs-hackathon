@@ -19,10 +19,10 @@ import { useAuthBridge } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
-  { href: "/#developer-hub", label: "CLI & MCP" },
+  { href: "/#developer-hub", label: "How It Works" },
+  { href: "/#telemetry-heading", label: "Living Topology" },
+  { href: "/rules", label: "Rules & Architecture" },
   { href: "/#case-studies", label: "Post-Mortems" },
-  { href: "/rules", label: "Detection Rules" },
-  { href: "/architecture", label: "Architecture" },
   { href: "/#faq", label: "FAQ" },
 ];
 
@@ -62,7 +62,6 @@ export function MarketingNav() {
           ))}
         </ul>
         <div className="ml-auto hidden items-center gap-3 sm:flex">
-          {/* Ask Steward removed from marketing nav per instruction */}
           {authEnabled && isSignedIn ? (
             <>
               <Button asChild variant="ghost">
@@ -80,23 +79,17 @@ export function MarketingNav() {
             </>
           ) : authEnabled ? (
             <>
-              <Button asChild variant="ghost" size="sm" className="hidden lg:inline-flex text-zinc-300 hover:text-white">
-                <Link href="/w/northwind-pay/home">Live Sandbox (0 Login)</Link>
-              </Button>
               <Button asChild variant="ghost" size="sm">
                 <Link href="/sign-in">Sign in</Link>
               </Button>
-              <Button asChild size="sm">
-                <Link href="/sign-up">Get started</Link>
+              <Button asChild size="sm" className="bg-brand-solid hover:bg-brand-solid/90 text-white font-semibold shadow-md">
+                <Link href="/w/northwind-pay/home">Launch Sandbox</Link>
               </Button>
             </>
           ) : (
             <>
-              <Button asChild variant="ghost">
-                <Link href="/w/northwind-pay/home">Enter Demo</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/w/northwind-pay/home">Open Dashboard</Link>
+              <Button asChild size="sm" className="bg-brand-solid hover:bg-brand-solid/90 text-white font-semibold shadow-md">
+                <Link href="/w/northwind-pay/home">Launch Sandbox</Link>
               </Button>
             </>
           )}

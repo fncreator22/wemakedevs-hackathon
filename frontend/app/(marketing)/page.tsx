@@ -46,35 +46,19 @@ const TRUST_CHIPS = [
 const FAQ = [
   {
     q: "What is Reprieve?",
-    a: "An agentic safety platform that tracks temporary exceptions (security waivers, flag overrides, skipped tests, limit extensions) as a graph, detects when they add up to real risk, and routes a review to the person who can decide today.",
+    a: "An architectural safety engine that maps technical exceptions onto your service graph to block compound outages before merge.",
   },
   {
-    q: "Is it a GRC suite?",
-    a: "No. Reprieve does one job: exception debt. It does not manage policies, audits or vendor risk. It complements the tools where exceptions are approved.",
+    q: "Does it replace compliance suites?",
+    a: "No. Reprieve governs engineering exception debt, not regulatory audit checklists.",
   },
   {
-    q: "How are risk scores calculated?",
-    a: "With a published, deterministic formula over the graph: exception severity, age, how overdue it is, how central the affected service is, and rule multipliers. The same inputs always give the same score. AI never sets a number.",
+    q: "Are risk scores AI-generated?",
+    a: "Never. Scores are calculated via a published, deterministic mathematical formula over your service graph.",
   },
   {
-    q: "What does the AI do, and what is sent to it?",
-    a: "The Steward answers questions and drafts proposals using tools over your graph. It sends entity IDs, names and short excerpts, never whole documents. Every claim must cite an entity, and uncited claims are removed.",
-  },
-  {
-    q: "Can I turn the AI off?",
-    a: "Yes. Each workspace has an AI mode. With AI off, detection, scoring, proof paths and reviews keep working; only the Steward and AI-written summaries are disabled.",
-  },
-  {
-    q: "Does anything change without my approval?",
-    a: "No. The Steward can only propose. Reviews, activations and other changes need an explicit Approve from someone with the right role.",
-  },
-  {
-    q: "Can I try it without my own data?",
-    a: "Yes. The sample workspace, Northwind Pay, loads a realistic payments company with services, people and exceptions so you can explore every feature on a simulated date with zero login.",
-  },
-  {
-    q: "Where is my data stored?",
-    a: "In a per-workspace FalkorDB graph database. During the early beta, use the sample workspace or non-sensitive data.",
+    q: "Can AI modify code or approve waivers automatically?",
+    a: "Never. Every waiver approval, extension, or reassignment requires an explicit human click.",
   },
 ];
 
@@ -136,34 +120,38 @@ export default function LandingPage() {
             {/* Left Column: Mission, Value Claim & Actions (6 cols) */}
             <div className="lg:col-span-6 space-y-6 text-left">
               <span className="text-[12px] font-mono uppercase tracking-[0.1em] text-zinc-400 font-semibold block">
-                PRE-MERGE ARCHITECTURE SAFETY ENGINE
+                PRE-MERGE ARCHITECTURE SAFETY
               </span>
 
               <h1 id="hero-title" className="text-[2.5rem] sm:text-[3.25rem] lg:text-[3.75rem] font-display font-bold tracking-[-0.04em] text-white leading-[1.05]">
-                Three harmless exceptions. One catastrophic collision.{" "}
-                <span className="text-zinc-400 font-normal block sm:inline">Reprieve intercepts compound risk before merge.</span>
+                Intercept compound risk before merge.
               </h1>
 
               <p className="text-[1.05rem] text-zinc-300 leading-relaxed max-w-xl">
-                Sprint boards treat waivers as isolated tickets. Reprieve models temporary bypasses and skipped tests as promises on your microservice graph to stop multi-hop cascading outages.
+                Three harmless exceptions can trigger one cascading outage. Reprieve maps temporary waivers across your live microservice graph to block risky pull requests.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button
-                  type="button"
-                  size="lg"
-                  onClick={() => setBookCallOpen(true)}
-                  className="gap-2 font-semibold px-6 py-6 text-body-base bg-brand-solid hover:bg-brand-solid/90 text-white shadow-xl shadow-brand-solid/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <Calendar className="size-4" aria-hidden="true" />
-                  Book Architecture Audit
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.08] hover:text-white px-6 py-6 text-body-base font-semibold">
+                <Button asChild size="lg" className="gap-2 font-semibold px-6 py-6 text-body-base bg-brand-solid hover:bg-brand-solid/90 text-white shadow-xl shadow-brand-solid/25 transition-all hover:scale-[1.02] active:scale-[0.98]">
                   <Link href="/w/northwind-pay/home">
-                    Launch Live Sandbox (0 Login)
+                    Launch Live Sandbox
                   </Link>
                 </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setBookCallOpen(true)}
+                  className="gap-2 border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.08] hover:text-white px-6 py-6 text-body-base font-semibold"
+                >
+                  <Calendar className="size-4" aria-hidden="true" />
+                  Book 15-Min Audit
+                </Button>
               </div>
+
+              <p className="text-[12px] font-mono text-zinc-400 pt-1">
+                Zero login required. Live payments topology.
+              </p>
             </div>
 
             {/* Right Column: Hero Graph Circuit Breaker (6 cols, side-by-side) */}
@@ -187,14 +175,14 @@ export default function LandingPage() {
       <section aria-labelledby="telemetry-heading" className="mx-auto max-w-[1280px] px-6 py-20 sm:px-10 sm:py-32">
         <div className="max-w-3xl space-y-4 mb-14 text-left">
           <span className="text-[12px] font-mono uppercase tracking-[0.1em] text-zinc-400 font-semibold">
-            LIVING COMPOUND RISK
+            LIVING COMPOUND TOPOLOGY
           </span>
           <h2 id="telemetry-heading" className="text-[2.25rem] sm:text-[2.75rem] font-display font-bold text-white tracking-tight leading-[1.15]">
             Exceptions are approved alone. <br />
             Risk compounds across the graph.
           </h2>
           <p className="text-[1.125rem] text-zinc-300 leading-relaxed">
-            Sprint boards treat waivers as isolated tickets. Reprieve projects them onto your microservice topology to catch cascading failures before peak traffic.
+            Project isolated backlog tickets onto your live service mesh to expose hidden bottlenecks.
           </p>
         </div>
 
@@ -282,7 +270,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="mt-3 text-[13px] text-zinc-300 leading-relaxed">
-                Past review decisions automatically resurface when the same control or service is evaluated.
+                Recalls past squad decisions on the same service to block endless renewals.
               </p>
               <div className="mt-4">
                 <PrecedentCard
@@ -301,18 +289,31 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Unified Slim Row of Trust Chips */}
-        <div className="mt-8 rounded-none border border-white/[0.08] bg-[#0c0d12] p-4">
-          <ul className="grid gap-4 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
-            {TRUST_CHIPS.map(({ icon: Icon, text }) => (
-              <li key={text} className="flex items-center gap-3 px-2 pt-2 sm:pt-0 sm:px-4">
-                <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-none bg-brand/10 text-brand">
-                  <Icon className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-[13px] font-medium text-zinc-300">{text}</span>
-              </li>
-            ))}
-          </ul>
+        {/* Feature Pillars (Below Interactive Graph UI) */}
+        <div className="mt-8 rounded-none border border-white/[0.08] bg-[#0c0d12] p-6 shadow-xl">
+          <div className="grid gap-6 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
+            <div className="px-2 pt-2 sm:pt-0 sm:px-4 space-y-1.5">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand">Pillar 01</span>
+              <h4 className="text-[15px] font-bold text-white">Hotspot Telemetry</h4>
+              <p className="text-[13px] text-zinc-400 leading-relaxed">
+                Tracks waiver density across checkout, authentication, and settlement paths.
+              </p>
+            </div>
+            <div className="px-2 pt-4 sm:pt-0 sm:px-4 space-y-1.5">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand">Pillar 02</span>
+              <h4 className="text-[15px] font-bold text-white">30-Day Time Scrubber</h4>
+              <p className="text-[13px] text-zinc-400 leading-relaxed">
+                Simulates upcoming traffic peaks to catch colliding waiver expiry dates.
+              </p>
+            </div>
+            <div className="px-2 pt-4 sm:pt-0 sm:px-4 space-y-1.5">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand">Pillar 03</span>
+              <h4 className="text-[15px] font-bold text-white">Precedent Memory</h4>
+              <p className="text-[13px] text-zinc-400 leading-relaxed">
+                Recalls past squad decisions on the same service to block endless renewals.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -340,30 +341,60 @@ export default function LandingPage() {
         </Accordion>
       </section>
 
+      {/* Enterprise Data Sovereignty Strip */}
+      <section aria-label="Enterprise Data Sovereignty" className="mx-auto max-w-[1280px] px-6 pb-12 sm:px-10">
+        <div className="rounded-none border border-white/[0.08] bg-[#0c0d12] p-6 shadow-xl">
+          <div className="grid gap-6 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
+            <div className="px-2 pt-2 sm:pt-0 sm:px-4 space-y-1.5">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand">Guarantee 01</span>
+              <h4 className="text-[15px] font-bold text-white">Zero Model Training</h4>
+              <p className="text-[13px] text-zinc-400 leading-relaxed">
+                Customer graph metadata never trains external or public AI models.
+              </p>
+            </div>
+            <div className="px-2 pt-4 sm:pt-0 sm:px-4 space-y-1.5">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand">Guarantee 02</span>
+              <h4 className="text-[15px] font-bold text-white">Metadata-Only Ingestion</h4>
+              <p className="text-[13px] text-zinc-400 leading-relaxed">
+                Processes service names and ticket tags without reading source code or databases.
+              </p>
+            </div>
+            <div className="px-2 pt-4 sm:pt-0 sm:px-4 space-y-1.5">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand">Guarantee 03</span>
+              <h4 className="text-[15px] font-bold text-white">Strict Tracker-Free Privacy</h4>
+              <p className="text-[13px] text-zinc-400 leading-relaxed">
+                Zero advertising trackers, zero marketing cookies, and zero behavioral analytics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 07. FINAL CONVERSION CTA */}
       <section aria-labelledby="cta-title" className="mx-auto max-w-[1280px] px-6 pb-24 sm:px-10">
         <div className="rounded-none border border-white/[0.08] bg-[#0c0d12] p-8 sm:p-14 text-left sm:text-center relative overflow-hidden shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-4">
             <h2 id="cta-title" className="text-[2rem] sm:text-[2.5rem] font-display font-bold text-white tracking-tight leading-[1.15]">
-              Map and intercept exception debt across your architecture
+              Stop compound exception debt before it merges.
             </h2>
             <p className="text-[1.125rem] text-zinc-300 leading-relaxed">
-              Book a 15-minute confidential architecture audit, or explore our live Northwind Pay environment today.
+              Explore a live payments microservice topology in seconds with zero signup or installation.
             </p>
             <div className="pt-4 flex flex-wrap gap-4 sm:justify-center">
-              <Button
-                size="lg"
-                onClick={() => setBookCallOpen(true)}
-                className="rounded-none gap-2 font-semibold bg-brand-solid hover:bg-brand-solid/90 text-white shadow-xl shadow-brand-solid/25 px-7 py-6 text-body-base"
-              >
-                <Calendar className="size-4" aria-hidden="true" />
-                Book Architecture Audit
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-none border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.08] hover:text-white px-7 py-6 text-body-base font-semibold">
+              <Button asChild size="lg" className="rounded-none font-semibold bg-brand-solid hover:bg-brand-solid/90 text-white shadow-xl shadow-brand-solid/25 px-7 py-6 text-body-base">
                 <Link href="/w/northwind-pay/home">
-                  Launch Live Sandbox (0 Login)
+                  Launch Live Sandbox
                   <ArrowRight className="ml-2 size-4" aria-hidden="true" />
                 </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => setBookCallOpen(true)}
+                className="rounded-none border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.08] hover:text-white px-7 py-6 text-body-base font-semibold"
+              >
+                <Calendar className="mr-2 size-4" aria-hidden="true" />
+                Book 15-Min Audit
               </Button>
             </div>
           </div>

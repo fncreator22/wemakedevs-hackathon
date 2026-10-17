@@ -20,22 +20,22 @@ interface ProofStat {
 const STATS: ProofStat[] = [
   {
     value: "14 Tools",
-    label: "Read-Only Reasoning",
-    sublabel: "8 pre-compiled Cypher rules (0% LLM)",
+    label: "Read-only deterministic graph analysis.",
+    sublabel: "Mathematical graph reasoning, 0% LLM",
   },
   {
     value: "<20ms",
-    label: "Pre-Merge Gate Latency",
+    label: "Pre-merge service mesh traversal.",
     sublabel: "p95 traversal on service graph",
   },
   {
     value: "100%",
-    label: "Grounded Proof Paths",
+    label: "Alerts mapped to exact service nodes.",
     sublabel: "Living graph nodes, 0 hallucinated IDs",
   },
   {
-    value: "0 Login",
-    label: "Developer Sandbox",
+    value: "0-Login",
+    label: "Instant live payments sandbox.",
     sublabel: "Interactive Northwind Pay telemetry",
     highlight: true,
   },

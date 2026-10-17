@@ -118,19 +118,19 @@ export function FeaturesCard() {
       {/* Section Header */}
       <div className="max-w-3xl space-y-4 mb-14 text-left">
         <span className="text-[12px] font-mono uppercase tracking-[0.1em] text-zinc-400 font-semibold">
-          HOW IT WORKS
+          ZERO WORKFLOW DISRUPTION
         </span>
         <h2 id="features-heading" className="text-[2.25rem] sm:text-[2.75rem] font-display font-bold text-white tracking-tight leading-[1.15]">
-          Three Native Interfaces. Zero Friction.
+          Three native surfaces. Zero friction.
         </h2>
         <p className="text-[1.125rem] text-zinc-300 leading-relaxed">
-          Developers don&apos;t want another dashboard. Reprieve comments directly on pull requests, exposes 14 graph reasoning tools to Cursor and Claude Desktop via MCP, and runs in 12ms inside your CI pipeline with zero login.
+          No new dashboards. Reprieve runs directly in your terminal, IDE, and pull requests.
         </p>
       </div>
 
       {/* Unified Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        {/* Tile 1: CLI Scanner (4 cols) */}
+        {/* Card 01: CLI Scanner (4 cols) */}
         <div className="md:col-span-4 rounded-none border border-white/[0.08] bg-[#0c0d12] p-6 sm:p-7 shadow-xl flex flex-col justify-between space-y-6">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -138,20 +138,20 @@ export function FeaturesCard() {
                 <Terminal className="size-4.5" aria-hidden="true" />
               </span>
               <span className="rounded-none border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] font-semibold text-zinc-300">
-                Zero-Login
+                LOCAL TERMINAL
               </span>
             </div>
             <h3 className="font-display text-[1.25rem] font-bold text-white">CLI Scanner</h3>
             <p className="text-[14px] text-zinc-300 leading-relaxed">
-              Local AST code parser mining <code className="text-zinc-200 bg-white/10 px-1 py-0.5 rounded-none font-mono text-[12px]">#nosec</code>, <code className="text-zinc-200 bg-white/10 px-1 py-0.5 rounded-none font-mono text-[12px]">@skip</code>, and temporary flags. Evaluates multi-hop cascades before push.
+              Parses local code for temporary bypasses and calculates blast radius before commit.
             </p>
           </div>
 
           <div className="rounded-none border border-white/[0.08] bg-[#07080a] p-3 font-mono text-[12px] flex items-center justify-between">
-            <span className="text-zinc-300 truncate">npx reprieve scan --strict</span>
+            <span className="text-zinc-300 truncate">$ npx reprieve scan --pre-commit</span>
             <button
               type="button"
-              onClick={() => handleCopy("npx reprieve scan --strict")}
+              onClick={() => handleCopy("npx reprieve scan --pre-commit")}
               aria-label="Copy CLI command"
               className="ml-2 p-1.5 rounded-none hover:bg-white/10 text-zinc-400 hover:text-white transition-colors"
             >
@@ -160,7 +160,7 @@ export function FeaturesCard() {
           </div>
         </div>
 
-        {/* Tile 2: MCP Protocol (4 cols) */}
+        {/* Card 02: MCP Server (4 cols) */}
         <div className="md:col-span-4 rounded-none border border-white/[0.08] bg-[#0c0d12] p-6 sm:p-7 shadow-xl flex flex-col justify-between space-y-6">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -168,78 +168,75 @@ export function FeaturesCard() {
                 <Cpu className="size-4.5" aria-hidden="true" />
               </span>
               <span className="rounded-none border border-brand/30 bg-brand/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-brand">
-                14 Tools
+                IDE ASSISTANT
               </span>
             </div>
-            <h3 className="font-display text-[1.25rem] font-bold text-white">MCP Protocol</h3>
+            <h3 className="font-display text-[1.25rem] font-bold text-white">MCP Server</h3>
             <p className="text-[14px] text-zinc-300 leading-relaxed">
-              Model Context Protocol endpoint for Cursor and Claude Desktop. Read-only graph reasoning tools with deterministic grounding: uncited entity IDs are stripped automatically.
+              Streams read-only microservice topology directly into Cursor and Claude.
             </p>
           </div>
 
           <div className="rounded-none border border-white/[0.08] bg-[#07080a] p-3 font-mono text-[11px] text-zinc-400">
-            <span className="text-brand font-semibold">Endpoint:</span> /api/v1/workspaces/&#123;id&#125;/mcp/tools
+            <span className="text-brand font-semibold">Endpoint:</span> mcp://reprieve/graph-topology
           </div>
         </div>
 
-        {/* Tile 3: GitHub CI Gate + Truncated YAML (4 cols) */}
+        {/* Card 03: CI/CD Breaker (4 cols) */}
         <div className="md:col-span-4 rounded-none border border-white/[0.08] bg-[#0c0d12] p-6 sm:p-7 shadow-xl flex flex-col justify-between space-y-4">
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="flex size-9 items-center justify-center rounded-none border border-white/10 bg-white/[0.04] text-brand">
                 <GitPullRequest className="size-4.5" aria-hidden="true" />
               </span>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => handleCopy(GITHUB_ACTION_YAML)}
-                aria-label="Copy GitHub Action YAML snippet"
-                className="h-7 rounded-none border-white/10 bg-white/[0.04] text-zinc-300 hover:text-white font-mono text-[11px] px-2.5"
-              >
-                {copied ? <Check className="mr-1 size-3 text-emerald-400" /> : <Copy className="mr-1 size-3" />}
-                <span>{copied ? "Copied" : "Copy YAML"}</span>
-              </Button>
+              <span className="rounded-none border border-rose-500/30 bg-rose-500/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-rose-300">
+                PULL REQUEST GATE
+              </span>
             </div>
-            <h3 className="font-display text-[1.25rem] font-bold text-white">GitHub CI Gate</h3>
+            <h3 className="font-display text-[1.25rem] font-bold text-white">CI/CD Breaker</h3>
+            <p className="text-[14px] text-zinc-300 leading-relaxed">
+              Blocks GitHub pull requests when cross-squad waivers exceed safety thresholds.
+            </p>
           </div>
 
-          <pre
-            tabIndex={0}
-            className="rounded-none border border-white/[0.08] bg-[#07080a] p-3.5 font-mono text-[11px] leading-relaxed text-zinc-300 overflow-x-auto max-h-[140px] focus:outline-none focus:ring-1 focus:ring-brand"
-          >
-            <code>{GITHUB_ACTION_YAML}</code>
-          </pre>
+          <div className="rounded-none border border-white/[0.08] bg-[#07080a] p-3 font-mono text-[11px] flex items-center justify-between">
+            <span className="text-emerald-400 truncate">reprieve/graph-gate passed (18ms)</span>
+          </div>
         </div>
 
-        {/* Row 2: Telemetry Stats (2 Compact Tiles, 6 cols total) */}
-        <div className="md:col-span-3 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col justify-between">
+        {/* Sub-Row Metrics */}
+        <div className="md:col-span-4 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col justify-between">
           <div className="space-y-1">
-            <span className="rounded-none border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-300">
-              SIMULATED BENCHMARK
-            </span>
-            <div className="mt-2 font-mono text-[2rem] font-bold text-white leading-none">0.00%</div>
-            <p className="text-[13px] font-medium text-zinc-200">False Positive Rate</p>
+            <div className="font-mono text-[2rem] font-bold text-white leading-none">&lt;65ms</div>
+            <p className="text-[13px] font-medium text-zinc-200">End-to-End PR Gate</p>
           </div>
           <p className="font-mono text-[11px] text-zinc-400 mt-2">
-            Tested across 10,000 simulated microservice graphs under sliding expiry windows.
+            End-to-end pull request check execution.
           </p>
         </div>
 
-        <div className="md:col-span-3 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col justify-between">
+        <div className="md:col-span-4 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col justify-between">
           <div className="space-y-1">
-            <span className="rounded-none border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400">
-              DETERMINISTIC LATENCY
-            </span>
-            <div className="mt-2 font-mono text-[2rem] font-bold text-white leading-none">12ms</div>
-            <p className="text-[13px] font-medium text-zinc-200">Pre-Merge Gate Latency</p>
+            <div className="font-mono text-[2rem] font-bold text-white leading-none">Zero</div>
+            <p className="text-[13px] font-medium text-zinc-200">Code Stored</p>
           </div>
           <p className="font-mono text-[11px] text-zinc-400 mt-2">
-            In-memory FalkorDB Cypher traversal halts cascading releases before merge.
+            Source code stored. Metadata-only graph ingestion.
           </p>
         </div>
 
-        {/* Row 2 Right: Stack Integrations Plain Logo Row (6 cols) */}
-        <div className="md:col-span-6 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col justify-between">
+        <div className="md:col-span-4 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col justify-between">
+          <div className="space-y-1">
+            <div className="font-mono text-[1.5rem] font-bold text-white leading-none">Native Stack</div>
+            <p className="text-[13px] font-medium text-zinc-200">Developer Ecosystem</p>
+          </div>
+          <p className="font-mono text-[11px] text-zinc-400 mt-2">
+            GitHub Actions, Cursor, Claude, Local CLI.
+          </p>
+        </div>
+
+        {/* Stack Integrations Plain Logo Row (12 cols) */}
+        <div className="md:col-span-12 rounded-none border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
               Ecosystem Connectors
@@ -247,7 +244,7 @@ export function FeaturesCard() {
             <h4 className="text-[1rem] font-bold text-white">Built for Living Engineering Stacks</h4>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 pt-3">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
             {[
               { name: "FalkorDB", role: "Graph Engine", logo: FalkorDbLogo },
               { name: "Redis", role: "Cache Layer", logo: RedisLogo },

@@ -17,8 +17,8 @@ import { StackingCard, type ProjectData } from "@/components/ui/stacking-card";
 export const INCIDENTS: ProjectData[] = [
   {
     id: "crowdstrike",
-    title: "CrowdStrike Falcon Sensor",
-    target: "CrowdStrike Falcon Sensor",
+    title: "CrowdStrike",
+    target: "CrowdStrike",
     date: "July 2024",
     lossFigure: "8.5M Systems Crashed",
     link: "https://www.crowdstrike.com/falcon-content-update-remediation-and-guidance-hub/",
@@ -27,11 +27,11 @@ export const INCIDENTS: ProjectData[] = [
     sourceDomain: "crowdstrike.com",
     articleImage: "/articles/crowdstrike-official.png",
     description:
-      "A rapid-response content update in Channel File 291 passed syntax gates but skipped staged rollout, triggering an out-of-bounds memory read directly on the kernel path.",
+      "Rapid content update skipped staged rollout on a root kernel dependency path.",
     whatHappened:
-      "A rapid-response content update in Channel File 291 passed syntax gates but skipped staged rollout, triggering an out-of-bounds memory read directly on the kernel path.",
+      "Rapid content update skipped staged rollout on a root kernel dependency path.",
     withReprieve:
-      "Evaluates blast radius on core paths. Sentinel flags uncanaried bypasses on root operating dependencies before release.",
+      "Service Concentration Rule flags uncanaried bypasses on core operating paths before merge.",
     rules: ["Rule R4: Service Concentration", "Rule R8: Customer-Path Exposure"],
     color: "#0b0c13",
     borderClass: "border-white/10 hover:border-white/20",
@@ -39,8 +39,8 @@ export const INCIDENTS: ProjectData[] = [
   },
   {
     id: "change-healthcare",
-    title: "Change Healthcare (UnitedHealth Group)",
-    target: "Change Healthcare (UnitedHealth Group)",
+    title: "Change Healthcare",
+    target: "Change Healthcare",
     date: "March 2024",
     lossFigure: "$1.6B Claims Freeze",
     link: "https://www.unitedhealthgroup.com/newsroom/2024/2024-03-07-uhg-update-change-healthcare-cyberattack.html",
@@ -49,11 +49,11 @@ export const INCIDENTS: ProjectData[] = [
     sourceDomain: "unitedhealthgroup.com",
     articleImage: "/articles/change-healthcare-official.png",
     description:
-      "An unmonitored legacy Citrix portal had no MFA enabled—a forgotten policy exception left behind after a corporate merger with zero active owner.",
+      "Post-merger legacy portal remained active without multi-factor authentication or an assigned owner.",
     whatHappened:
-      "An unmonitored legacy Citrix portal had no MFA enabled—a forgotten policy exception left behind after a corporate merger with zero active owner.",
+      "Post-merger legacy portal remained active without multi-factor authentication or an assigned owner.",
     withReprieve:
-      "Flags unowned systems and expired policy exceptions. Sentinel alerts security teams before dormant, single-factor backdoors reach production.",
+      "Orphaned Owner Rule detects unmonitored services the moment an owner leaves or changes squads.",
     rules: ["Rule R2: Ghost Owner", "Rule R7: Broken Compensating Control"],
     color: "#0c0d16",
     borderClass: "border-white/10 hover:border-white/20",
@@ -61,21 +61,21 @@ export const INCIDENTS: ProjectData[] = [
   },
   {
     id: "square-block",
-    title: "Square (Block, Inc.)",
-    target: "Square (Block, Inc.)",
+    title: "Square / Block",
+    target: "Square / Block",
     date: "September 2023",
-    lossFigure: "24-Hour Checkout Outage",
+    lossFigure: "24-Hr Checkout Outage",
     link: "https://developer.squareup.com/blog/incident-summary-2023-09-07",
     sourceUrl: "https://developer.squareup.com/blog/incident-summary-2023-09-07",
     sourceLabel: "Official Square Engineering PIR",
     sourceDomain: "developer.squareup.com",
     articleImage: "/articles/square-official.png",
     description:
-      "An internal firewall update coincided with a DNS server upgrade, exhausting DNS capacity and severing microservices from checkout payment gateways.",
+      "Internal firewall update coincided with a DNS upgrade on shared payment gateway routes.",
     whatHappened:
-      "An internal firewall update coincided with a DNS server upgrade, exhausting DNS capacity and severing microservices from checkout payment gateways.",
+      "Internal firewall update coincided with a DNS upgrade on shared payment gateway routes.",
     withReprieve:
-      "Detects compound change collisions. Halts deployments when concurrent infrastructure updates intersect on shared resolution paths.",
+      "Collision Engine halts concurrent infrastructure changes that intersect on shared resolution paths.",
     rules: ["Rule R4: Service Concentration", "Rule R6: High-Blast Wave"],
     color: "#0d0e1a",
     borderClass: "border-brand/30 hover:border-brand/40",
@@ -93,18 +93,16 @@ export function CaseStudiesSection() {
       {/* Section Header */}
       <div className="max-w-3xl space-y-2 mb-8 text-left">
         <span className="text-[12px] font-mono uppercase tracking-[0.1em] text-zinc-400 font-semibold">
-          INCIDENT POST-MORTEMS · ROOT CAUSE ANALYSIS
+          INCIDENT POST-MORTEMS
         </span>
         <h2
           id="case-studies-heading"
           className="text-[2.25rem] sm:text-[2.75rem] font-display font-bold text-white tracking-tight leading-[1.15]"
         >
-          How graph governance prevents systemic outages
+          How graph governance prevents systemic outages.
         </h2>
         <p className="text-[1.05rem] text-zinc-300 leading-relaxed">
-          Real-world engineering disasters from top tech companies. Here is how
-          Reprieve&apos;s deterministic graph rules intercept these failure modes
-          before code merges.
+          Select an incident to inspect the architectural flaw and deterministic interception rule.
         </p>
       </div>
 
