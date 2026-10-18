@@ -1,6 +1,6 @@
 # Repository Cleanup & Architecture Normalization Audit Log
 
-> **Repository**: `Reprieve` (`wemakedevs-hackathon` / `Reprieve-full-stack`)  
+> **Repository**: `Reprieve` (`wemakedevs-hackathon`)  
 > **Author & Maintainer**: `fncreator22 <99069286+fncreator22@users.noreply.github.com>`  
 > **Operation**: Comprehensive Repository Hygiene & Dead-Asset Purge  
 > **Timestamp**: October 15, 2026 (14:46 IST)  

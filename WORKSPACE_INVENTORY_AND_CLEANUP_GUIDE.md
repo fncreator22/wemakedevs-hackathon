@@ -1,5 +1,5 @@
 # Reprieve — Workspace File Inventory & Cleanup Guide
-> **Repository:** `Reprieve` (`wemakedevs-hackathon` / `Reprieve-full-stack`)  
+> **Repository:** `Reprieve` (`wemakedevs-hackathon`)  
 > **Maintainer:** `fncreator22 <99069286+fncreator22@users.noreply.github.com>`  
 > **Updated:** October 15, 2026 (Hackathon Launch Standard)  
 > **Purpose:** Living catalog of Core Project Files vs. Auxiliary/Scratch Artifacts with 1-click cleanup commands.

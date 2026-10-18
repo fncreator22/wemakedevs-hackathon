@@ -20,9 +20,6 @@ import {
   Layers,
   Flame,
   BrainCircuit,
-  UserCheck,
-  Cpu,
-  Route,
   ArrowRight,
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -36,12 +33,6 @@ import { PrecedentCard } from "@/components/precedent-card";
 import { SeverityBadge } from "@/components/severity-badge";
 import { cn } from "@/lib/utils";
 import { FeaturesCard } from "@/components/ui/features-card";
-
-const TRUST_CHIPS = [
-  { icon: UserCheck, text: "A human approves every change" },
-  { icon: Cpu, text: "Scores are deterministic, never AI-guessed" },
-  { icon: Route, text: "100% Grounded proof paths cite living nodes" },
-];
 
 const FAQ = [
   {

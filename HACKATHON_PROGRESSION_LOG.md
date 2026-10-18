@@ -326,12 +326,28 @@ A deep runtime and local execution verification of `wemakedevs-hackathon` was ex
 | **BP-03** | `AGENTS.md` vs. `backend/app/agents/tools.py` | `AGENTS.md` documents tool names `list_services`, `list_orphaned`, `list_expiring`, and `get_service`, whereas `tools.py` implements `list_risk_services`, `explain_service`, etc. | Add alias wrappers or unify documentation for external MCP clients. | Medium | Scheduled |
 | **BP-04** | Docker Daemon (Host Environment) | Docker Desktop is currently stopped on host; TCP port 6379 refused. Precludes running live FalkorDB queries until daemon starts. | Start Docker Desktop (`docker compose up -d falkordb`). | Environment | Pending Host Docker Launch |
 
+---
 
-
-
-
-
-
-
-
+## 10. Comprehensive Cleanup Audit, Dead-Code Elimination & Warning-Free Build
+* **Date & Timestamp**: \Sun Oct 18 20:42:00 2026 +0530\
+* **Target Commits**:
+  - \7cc18a8\: refactor(ui): restore original hero circuit breaker topology and developer surfaces bento grid
+  - \1c22c1f\: feat(marketing): update landing copy, proof metrics, native surfaces, and FAQ to production spec
+  - Upcoming: chore: repository cleanup, lint warning resolution, and documentation normalization
+* **Audit Scope & Cleanups**:
+  - **Dead Code Purged**: Removed unrendered \TRUST_CHIPS\ and unused Lucide icon imports (\UserCheck\, \Cpu\, \Route\) in \rontend/app/(marketing)/page.tsx\.
+  - **ESLint Warnings Resolved**:
+    - Disallowed unoptimized img warning on dynamic post-mortem article screenshot in \rontend/components/ui/stacking-card.tsx\ via targeted directive.
+    - Excluded superfluous dependencies (\ws.isError\, \ws.isPending\) from \useMemo\ in \rontend/lib/workspace.tsx\.
+    - **Frontend ESLint Result**: **0 errors, 0 warnings** across all Next.js pages and components.
+  - **Documentation Normalized**:
+    - Replaced all stale references to pre-hackathon repo name with \wemakedevs-hackathon\ across \docs/00-decisions.md\, \docs/02-tech-stack.md\, \CLEANUP_AUDIT_LOG.md\, and \WORKSPACE_INVENTORY_AND_CLEANUP_GUIDE.md\.
+  - **Zero-Regression Verification**:
+    - Turbopack Production Build (\
+ext build\): **100% Passing** in 1.54s across all static and dynamic routes.
+    - Python Code Quality (\
+uff check app\): **Passing** with 0 errors.
+    - Python Static Typing (\mypy app\): **Success: no issues found in 58 source files**.
+    - Backend Pytest Suite: **7 passed in 0.83s** (\	est_plugins.py\).
+    - CLI Operational Gate: Verified zero-login CLI scanner, MCP config generator, and bridge.
 

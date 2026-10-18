@@ -140,7 +140,7 @@ export function useResolveWorkspace(slug: string): WorkspaceResolution {
         membership,
       },
     };
-  }, [isNorthwindDemo, me, membership, ws.data, ws.error, ws.isError, ws.isPending]);
+  }, [isNorthwindDemo, me, membership, ws.data, ws.error]);
 }
 
 const WorkspaceContext = createContext<WorkspaceContextValue | null>(null);

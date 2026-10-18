@@ -225,6 +225,7 @@ export const Card = ({
                   className="w-full h-full relative"
                   style={{ scale: imageScale }}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={displayImage}
                     alt={project?.target || title}
